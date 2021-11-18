@@ -2,6 +2,8 @@ NAME		=	minishell
 HEADER_RDL	=	/opt/homebrew/Cellar/readline/8.1/include
 #HEADER_RDL	=	/usr/local/opt/readline/include #cleonia
 #HEADER_RDL	=	/Users/cleonia/.brew/Cellar/readline/8.1.1/include #school
+HEADER		=	minishell.h
+
 GCC			=	gcc -g -Wall -Wextra -Werror 
 
 DIR_LIBA	=	libft/

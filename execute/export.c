@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 21:48:38 by celys             #+#    #+#             */
-/*   Updated: 2021/11/16 01:54:46 by celys            ###   ########.fr       */
+/*   Updated: 2021/11/19 02:16:27 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,9 +114,9 @@ int	export(t_main *main)
 {
 	t_tmps	*tmps;
 
-	tmps = init_tmps();
 	if (*main->gap->arg == NULL)
 		return (print_export(main->envp, main->gap->fd_out));
+	tmps = init_tmps();
 	while (*main->gap->arg != NULL)
 	{
 		my_free(tmps->tmp1);
