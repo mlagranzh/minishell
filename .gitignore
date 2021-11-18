@@ -1,0 +1,9 @@
+*.o
+*/*.o
+.vscode/*.json
+*/*.a
+minishell
+msh_tester
+msh_tester_copy
+.DS_Store
+buf_file.c

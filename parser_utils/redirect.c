@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   redirect.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cleonia <cleonia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ChelseyLeonia <ChelseyLeonia@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 19:14:24 by cleonia           #+#    #+#             */
-/*   Updated: 2021/11/11 19:46:48 by cleonia          ###   ########.fr       */
+/*   Updated: 2021/11/18 19:18:00 by ChelseyLeon      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-static int	redir_open_file(t_main *main, char *redir_arg)
+static int	redir_open_file(t_main *main, char *redir_arg, int empty_flag)
 {
 	int	retval;
 
-	if (ft_check_redir_arg(redir_arg) == FALSE)
+	if (ft_check_redir_arg(redir_arg) == FALSE && empty_flag != 0)
 	{
 		main->exit_status = E_SYNTAX;
 		return (ft_error_in_shell(ERROR, NULL, "syntax error", 0));
@@ -98,7 +98,7 @@ void	redirect(t_main *main, char **str, int *i, int *j)
 		main->exit_status = E_MALLOC;
 		return ;
 	}
-	retval = redir_open_file(main, buf_str);
+	retval = redir_open_file(main, buf_str, *i - *j);
 	free (buf_str);
 	if (retval != NOT_ERROR)
 		return ;
