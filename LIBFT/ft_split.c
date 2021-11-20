@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:43:36 by celys             #+#    #+#             */
-/*   Updated: 2021/11/07 16:43:42 by celys            ###   ########.fr       */
+/*   Updated: 2021/11/20 03:10:48 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,15 @@ static unsigned int	ft_count_array(char const *s, char c)
 
 	if (!s)
 		return (0);
-	while (*s == c)
-		s++;
 	i = 0;
 	count_array = 1;
-	while (s[i] == c)
+	while (s[i] == c && s[i] != '\0')
 		i++;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 		{
-			while (s[i] == c)
+			while (s[i] == c && s[i] != '\0')
 				i++;
 			count_array += 1;
 		}
@@ -74,9 +72,9 @@ char	**ft_split(char const *s, char c)
 	unsigned int	i;
 	unsigned int	len;
 
-	i = 0;
 	if (!s)
 		return (NULL);
+	i = 0;
 	p = (char **) ft_calloc((ft_count_array(s, c) + 1), sizeof(char *));
 	if (p == NULL)
 		return (NULL);
@@ -85,7 +83,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (*s != c && i != len)
 		{
-			p[i] = ft_get_next_array (p[i], s, c);
+			p[i] = ft_get_next_array(p[i], s, c);
 			if (p[i] == NULL)
 				return (ft_malloc_free(p));
 			while (*(s) != c && *(s) != '\0')

@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:06:15 by celys             #+#    #+#             */
-/*   Updated: 2021/11/17 20:32:56 by celys            ###   ########.fr       */
+/*   Updated: 2021/11/20 03:20:38 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ char	**utils_parse_filename(char **envp)
 	{
 		i++;
 		if (envp[i] == NULL)
-			return (NULL);
+		{
+			parse_2 = malloc(sizeof(char *));
+			parse_2[0] = NULL;
+			return (parse_2);
+		}
 	}
 	parse_1 = ft_split(envp[i], '=');
 	parse_2 = ft_split(parse_1[1], ':');

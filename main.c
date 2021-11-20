@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ChelseyLeonia <ChelseyLeonia@student.42    +#+  +:+       +#+        */
+/*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:11:32 by celys             #+#    #+#             */
-/*   Updated: 2021/11/18 18:24:04 by ChelseyLeon      ###   ########.fr       */
+/*   Updated: 2021/11/20 03:11:30 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	minishell(t_main *main, struct termios *term_settings)
 	if (main->exit_status == NOT_ERROR)
 		main->exit_status = main->last_exit_status;
 	main->gap = main->first_gap;
-	init_first_arg(main); 
+	init_first_arg(main);
 	if (retval != E_PREPARSER)
 	{
 		init_pid(main);
