@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 19:41:32 by ChelseyLeon       #+#    #+#             */
-/*   Updated: 2021/11/22 07:11:45 by celys            ###   ########.fr       */
+/*   Updated: 2021/11/22 10:34:01 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,20 @@ char	*ft_readline(void)
 	signal(SIGINT, signal_handler);
 	tmp1 = getcwd(NULL, 0);
 	tmp3 = ft_split(tmp1, '/');
-	if (tmp3[0] != NULL)
+	if (!tmp3)
+		tmp4 = NULL;
+	else if (tmp3[0] != NULL)
 		tmp4 = ft_strjoin(tmp3[len_2d_array(tmp3) - 1], " ");
 	else
 		tmp4 = ft_strdup("/");
 	tmp2 = my_strjoin(READLINE_CYAN, "minishell \001➜\002 ", READLINE_YELLOW);
-	free(tmp1);
+	my_free(tmp1);
 	tmp1 = my_strjoin(tmp2, tmp4, READLINE_WHITE);
 	line = readline(tmp1);
-	free(tmp1);
+	my_free(tmp1);
 	free_2d_array(tmp3);
-	free(tmp4);
-	free(tmp2);
+	my_free(tmp4);
+	my_free(tmp2);
 	return (line);
 }
 
