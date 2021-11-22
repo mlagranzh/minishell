@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 19:41:32 by ChelseyLeon       #+#    #+#             */
-/*   Updated: 2021/11/17 22:45:27 by celys            ###   ########.fr       */
+/*   Updated: 2021/11/22 07:11:45 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	init_first_arg(t_main *main)
 	}
 }
 
-char	*ft_readline(char **envp)
+char	*ft_readline(void)
 {
 	char	*tmp1;
 	char	*tmp2;
@@ -68,7 +68,7 @@ char	*ft_readline(char **envp)
 	char	*line;
 
 	signal(SIGINT, signal_handler);
-	tmp1 = ft_getenv(envp, "PWD");
+	tmp1 = getcwd(NULL, 0);
 	tmp3 = ft_split(tmp1, '/');
 	if (tmp3[0] != NULL)
 		tmp4 = ft_strjoin(tmp3[len_2d_array(tmp3) - 1], " ");

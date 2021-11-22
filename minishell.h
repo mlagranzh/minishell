@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 17:26:40 by celys             #+#    #+#             */
-/*   Updated: 2021/11/17 22:02:24 by celys            ###   ########.fr       */
+/*   Updated: 2021/11/22 07:11:52 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,7 @@ int		free_ret(t_tmps *tmps, int ret);
 char	**ft_realloc(char **old, size_t size);
 char	**free_2d_array(char **p);
 /* utils7 */
-char	*ft_readline(char **envp);
+char	*ft_readline(void);
 void	init_first_arg(t_main *main);
 void	ft_free_main(t_main *main, char *line);
 void	signal_handler(int signo);

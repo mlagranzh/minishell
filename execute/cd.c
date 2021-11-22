@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:11:30 by banji             #+#    #+#             */
-/*   Updated: 2021/11/17 00:28:58 by celys            ###   ########.fr       */
+/*   Updated: 2021/11/22 07:11:23 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	cd(t_main *main)
 	tmps = init_tmps();
 	if (!cd_utils(main))
 		return (free_ret(tmps, 1));
-	tmps->tmp2 = ft_getenv(main->envp, "PWD");
+	tmps->tmp2 = getcwd(NULL, 0);
 	if (chdir(main->gap->arg[0]) == -1)
 	{
 		my_putstr_fd("minishell: cd: ", main->gap->arg[0], \

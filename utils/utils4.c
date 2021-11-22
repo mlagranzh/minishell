@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 18:08:50 by celys             #+#    #+#             */
-/*   Updated: 2021/11/18 14:10:53 by celys            ###   ########.fr       */
+/*   Updated: 2021/11/20 04:53:33 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	wait_pid(t_main *main)
 	while (main->pid[i] != -1)
 	{
 		if (waitpid(main->pid[i], &main->exit_status, 0) == -1)
-			perror("WAIT_PID");
+			return (perror("WAIT_PID"));
 		if (WIFSIGNALED(main->exit_status))
 			main->exit_status = 130;
 		else

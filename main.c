@@ -6,7 +6,7 @@
 /*   By: celys <celys@student.21-school.ru>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 16:11:32 by celys             #+#    #+#             */
-/*   Updated: 2021/11/20 03:11:30 by celys            ###   ########.fr       */
+/*   Updated: 2021/11/22 07:11:58 by celys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	minishell(t_main *main, struct termios *term_settings)
 	int				retval;
 	char			*line;
 
-	line = ft_readline(main->envp);
+	line = ft_readline();
 	tcsetattr(0, TCSANOW, &(*term_settings));
 	if (line == NULL)
 		exit(main->exit_status);
